@@ -1,8 +1,17 @@
+import os
+import sys
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+parent = os.path.dirname(SCRIPT_DIR)
+parent = os.path.dirname(parent)
+sys.path.append(parent)
+
 import json
 
-from scene_analysis import SceneAnalysis
+from NLP.scene_analysis import SceneAnalysis
 
-f = open('../data/scene_analysis_testset.json')
+
+f = open('NLP/data/scene_analysis_testset.json')
 data = json.load(f)
 
 tester = SceneAnalysis(data)

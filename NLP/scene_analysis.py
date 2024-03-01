@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Union
 
-from vialm_llm import VialmLLM
+from NLP.vialm_llm import VialmLLM
+
 
 class SceneAnalysis():
     def __init__(
@@ -18,18 +19,18 @@ class SceneAnalysis():
 
             score = 0
             mq_count = 0
-            with open('utils/scene_analysis_prompt.txt', 'r') as f:
-                prompt = f.readlines() + '\n\n'
+            with open('NLP/utils/scene_analysis_prompt.txt', 'r') as f:
+                prompt = "".join(f.readlines()) + '\n\n'
 
             for img in self._data:
                 item = img['cls']
                 pos = img['boxxywh']
-                item_prompt = "ITEM = [" + ", ".join(item) + "]\n"
-                pos_prompt = "POS = [" + ", ".join(pos) + "]\n"
+                item_prompt = "ITEM = [" + ", ".join(item) + "]\n\n"
+                pos_prompt = "POS = [" + ", ".join([str(box) for box in pos]) + "]\n\n"
 
                 for mq in img['question list']:
-                    question_prompt = "QUESTION: " + mq['question'] + "\n"
-                    options_prompt = "A: " + mq['options']['A'] + "\nB: " + mq['options']['B'] + "\nC: " + mq['options']['C'] + "\nD: " + mq['options']['D']
+                    question_prompt = "QUESTION: " + mq['question'] + "\n\n"
+                    options_prompt = "A: " + mq['options']['A'] + "\nB: " + mq['options']['B'] + "\nC: " + mq['options']['C'] + "\nD: " + mq['options']['D'] + "\n\n"
 
                     prompt = prompt + item_prompt + pos_prompt + question_prompt + options_prompt
                     response = vialm_llm.run_llm(prompt)
