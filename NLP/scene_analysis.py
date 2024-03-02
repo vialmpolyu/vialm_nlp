@@ -6,9 +6,11 @@ from NLP.vialm_llm import VialmLLM
 class SceneAnalysis():
     def __init__(
         self,
-        data: List[Dict[str, Any]]
+        data: List[Dict[str, Any]],
+        prompt: str,
     ) -> None:
         self._data = data
+        self._prompt = prompt
 
     def evaluate_score(
             self, 
@@ -19,8 +21,6 @@ class SceneAnalysis():
 
             score = 0
             mq_count = 0
-            with open('NLP/utils/scene_analysis_prompt.txt', 'r') as f:
-                prompt = "".join(f.readlines()) + '\n\n'
 
             for img in self._data:
                 item = img['cls']
@@ -32,7 +32,7 @@ class SceneAnalysis():
                     question_prompt = "QUESTION: " + mq['question'] + "\n\n"
                     options_prompt = "A: " + mq['options']['A'] + "\nB: " + mq['options']['B'] + "\nC: " + mq['options']['C'] + "\nD: " + mq['options']['D'] + "\n\n"
 
-                    prompt = prompt + item_prompt + pos_prompt + question_prompt + options_prompt
+                    prompt = self._prompt + item_prompt + pos_prompt + question_prompt + options_prompt
                     response = vialm_llm.run_llm(prompt)
                     print(f"RESPONSE: {response}, ANSWER: {mq['answer']}")
 

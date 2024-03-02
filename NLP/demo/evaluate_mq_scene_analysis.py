@@ -11,10 +11,11 @@ import json
 from NLP.scene_analysis import SceneAnalysis
 
 
-f = open('NLP/data/scene_analysis_testset.json')
-data = json.load(f)
+data = json.load(open('NLP/data/scene_analysis_testset.json'))
+with open('NLP/utils/scene_analysis_prompt.txt', 'r') as f:
+    prompt = "".join(f.readlines()) + '\n\n'
 
-tester = SceneAnalysis(data)
+tester = SceneAnalysis(data, prompt)
 result = tester.evaluate_score()
 
 print(f"CORRECT: {result[0]}, TOTAL: {result[1]}, TEST SCORE: {result[2]}")
