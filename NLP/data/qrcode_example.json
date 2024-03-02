@@ -1,0 +1,27 @@
+[
+    {
+        "id": 0,
+        "url": "https://www.youtube.com/@departmentofcomputingpolyu1722",
+        "description": "Homepage of a YouTube channel of the Department of Computing, PolyU"
+    },
+    {
+        "id": 1,
+        "url": "https://ai.meta.com/blog/5-steps-to-getting-started-with-llama-2/",
+        "description": "A guidance of getting started with llama 2 by Meta AI"
+    },
+    {
+        "id": 2,
+        "url": "https://www.reddit.com/r/HongKong/",
+        "description": "A subreddit about HongKong"
+    },
+    {
+        "id": 3,
+        "url": "https://online.citysuper.com.hk/",
+        "description": "Homepage of a supermarket in HongKong"
+    },
+    {
+        "id": 4,
+        "url": "https://mcdonalds.com.hk/",
+        "description": "McDonalds HongKong"
+    }
+]

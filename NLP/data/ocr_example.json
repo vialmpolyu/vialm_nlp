@@ -1,0 +1,17 @@
+[
+    {
+        "id": 0,
+        "content": "1 Chicken Fried Rice And Egg Lunch $7.99\n 1 California Tropic And Miso Lunch $7.99\n 1 Add Two Tostones $1.00\n Subtotal $16.98\n Tax $1.70\n Total $18.70\n",
+        "answer": 18.70
+    },
+    {
+        "id": 1,
+        "content": "1 Db1 Qtr Cheese 5.99\n Special Request\n ADD Leaf Lettuce 0.25\n ADD Mac Sauce 0.40\n\n Subtotal 6.64\n Tax 0.63\n Take-Out Total 7.27\n",
+        "answer": 7.27
+    },
+    {
+        "id": 2,
+        "content": "40 BONELESS WINGS SPEC $10.00\n Subtotal: $10.00\n Tax:: $0.70\n Sbtl w/Tax: $10.70\n Amt Due: $10.70\n",
+        "answer": 10.70
+    }
+]
