@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Union
 from NLP.vialm_llm import VialmLLM
 
 
-class SceneAnalysis():
+class SceneAnalyzer():
     def __init__(
         self,
         data: List[Dict[str, Any]],

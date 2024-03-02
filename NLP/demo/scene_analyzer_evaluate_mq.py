@@ -8,14 +8,14 @@ sys.path.append(parent)
 
 import json
 
-from NLP.scene_analysis import SceneAnalysis
+from NLP.scene_analyzer import SceneAnalyzer
 
 
-data = json.load(open('NLP/data/scene_analysis_testset.json'))
-with open('NLP/utils/scene_analysis_prompt.txt', 'r') as f:
+data = json.load(open('NLP/data/scene_testset.json'))
+with open('NLP/utils/scene_analyzer_prompt.txt', 'r') as f:
     prompt = "".join(f.readlines()) + '\n\n'
 
-tester = SceneAnalysis(data, prompt)
-result = tester.evaluate_score()
+analyzer = SceneAnalyzer(data, prompt)
+result = analyzer.evaluate_score()
 
 print(f"CORRECT: {result[0]}, TOTAL: {result[1]}, TEST SCORE: {result[2]}")
