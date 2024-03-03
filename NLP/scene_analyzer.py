@@ -32,9 +32,9 @@ class SceneAnalyzer():
                     question_prompt = f"QUESTION: {mq['question']}\n\n"
                     options_prompt = f"A: {mq['options']['A']}\nB: {mq['options']['B']}\nC: {mq['options']['C']} \nD: {mq['options']['D']}\n\n"
 
-                    prompt = self._prompt + item_prompt + pos_prompt + question_prompt + options_prompt
+                    prompt = self._prompt + item_prompt + pos_prompt + question_prompt + options_prompt + "ANSWER ="
                     response = vialm_llm.run_llm(prompt)
-                    print(f"RESPONSE: {response}, ANSWER: {mq['answer']}")
+                    print(f"RESPONSE: {response}, ANSWER: {mq['answer']}\n")
 
                     mq_count += 1
                     if (response == mq['answer']):

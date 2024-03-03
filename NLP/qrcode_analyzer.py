@@ -24,7 +24,7 @@ class QRCodeAnalyzer():
         for website in self._data:
             url = website['url']
             url_prompt = f"URL = {url}\n\n"
-            prompt = self._prompt + url_prompt
+            prompt = self._prompt + url_prompt + "ANSWER ="
             response = vialm_llm.run_llm(prompt)
             print(f"RESPONSE: {response}\n")
             print(f"LABEL: {website['description']}\n")
