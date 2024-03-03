@@ -12,4 +12,4 @@ W: width of the bounding box
 H: height of the bounding box
 
 You will be given a multiple-choice question that asks about the locations of objects in the image represented by ITEM and POS. 
-Select the most likely answer, and only output your choice (i.e. "A", "B", "C" or "D"). Do not say any word or explain.
+Select the most likely answer, and only output the letter (i.e. "A", "B", "C" or "D"). Do not say any word or explain.
