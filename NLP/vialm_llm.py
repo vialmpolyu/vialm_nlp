@@ -27,10 +27,10 @@ class VialmLLM():
         response = self._pipeline(
             prompt,
             do_sample=True,
-            top_k=10,
+            top_k=40,
             num_return_sequences=1,
             eos_token_id=self._tokenizer.eos_token_id,
-            max_length=400,
+            max_length=1600,
         )
 
         return response
