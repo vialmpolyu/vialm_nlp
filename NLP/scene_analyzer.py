@@ -14,7 +14,7 @@ class SceneAnalyzer():
 
     def evaluate(
             self, 
-            model: str = "models/llama-2-7b"
+            model: str = "NLP/models/llama-2-7b"
         ) -> List[Union[int, float]]:
             
             vialm_llm = VialmLLM(model) 

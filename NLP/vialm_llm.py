@@ -7,7 +7,7 @@ from transformers import LlamaForCausalLM, LlamaTokenizer
 class VialmLLM():
     def __init__(
         self,
-        model: str = "models/llama-2-7b"
+        model: str = "NLP/models/llama-2-7b"
     ) -> None:
         self._model = LlamaForCausalLM.from_pretrained(model)
         self._tokenizer = LlamaTokenizer.from_pretrained(model)
