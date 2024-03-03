@@ -14,7 +14,7 @@ class QRCodeAnalyzer():
 
     def analyze(
             self, 
-            model: str = "NLP/models/llama-2-7b"
+            model: str = "NLP/models/llama-2-chat-7b-hf"
     ) -> List[str]:
         
         vialm_llm = VialmLLM(model) 
