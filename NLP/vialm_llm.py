@@ -13,7 +13,7 @@ class VialmLLM():
         self._tokenizer = LlamaTokenizer.from_pretrained(model)
 
         self._pipeline = transformers.pipeline(
-            "question-answering",
+            "text-generation",
             model=self._model,
             tokenizer=self._tokenizer,
             torch_dtype=torch.float16,
