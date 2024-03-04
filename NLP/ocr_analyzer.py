@@ -23,10 +23,11 @@ class OCRAnalyzer():
 
         for receipt in self._data:
             content = receipt['content']
-            content_prompt = f"CONTENT = {content}\n\n"
-            prompt = self._prompt + content_prompt + "RESPONSE="
+            content_prompt = f"CONTENT={content}\n"
+            prompt = f"{self._prompt}\n{content_prompt}\nRESPONSE="
             response = vialm_llm.run_llm(prompt)
-            print(f"RESPONSE: {response}, ANSWER: {receipt['answer']}\n")
+            print(f"RESPONSE: {response}\n")
+            print(f"ANSWER: {receipt['answer']}\n")
             result.append(response)
 
         return result

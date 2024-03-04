@@ -21,8 +21,8 @@ class VialmLLM():
         )
 
     def run_llm(
-            self,
-            prompt: str
+        self,
+        prompt: str
     ) -> str:
         response = self._pipeline(
             prompt,

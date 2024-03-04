@@ -13,9 +13,9 @@ from NLP.scene_analyzer import SceneAnalyzer
 
 data = json.load(open('NLP/data/scene_testset.json'))
 with open('NLP/utils/scene_analyzer_prompt.txt', 'r') as f:
-    prompt = "".join(f.readlines()) + '\n\n'
+    prompt = f"{''.join(f.readlines())}\n\n"
 
 analyzer = SceneAnalyzer(data, prompt)
 result = analyzer.evaluate()
 
-print(f"CORRECT: {result[0]}, TOTAL: {result[1]}, TEST SCORE: {result[2]}")
+# print(f"CORRECT: {result[0]}, TOTAL: {result[1]}, TEST SCORE: {result[2]}")

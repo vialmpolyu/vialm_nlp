@@ -23,11 +23,11 @@ class QRCodeAnalyzer():
 
         for website in self._data:
             url = website['url']
-            url_prompt = f"URL = {url}\n\n"
-            prompt = self._prompt + url_prompt + "RESPONSE="
+            url_prompt = f"URL={url}\n"
+            prompt = f"{self._prompt}\n{url_prompt}\nRESPONSE="
             response = vialm_llm.run_llm(prompt)
             print(f"RESPONSE: {response}\n")
-            print(f"LABEL: {website['description']}\n")
+            print(f"ANSWER: {website['description']}\n")
             result.append(response)
 
         return result

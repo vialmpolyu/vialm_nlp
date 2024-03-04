@@ -23,5 +23,15 @@
         "id": 4,
         "url": "https://mcdonalds.com.hk/",
         "description": "McDonalds HongKong"
+    }, 
+    {
+        "id": 5,
+        "url": "weixin://wxpay/bizpayurl?pr=L4BJGKjzz",
+        "description": "Wechat Pay"
+    }, 
+    {
+        "id": 6,
+        "url": "https://qr.alipay.com/upx02473eodamk0tqpx9251b",
+        "description": "Alipay"
     }
 ]

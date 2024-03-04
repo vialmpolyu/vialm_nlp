@@ -25,16 +25,17 @@ class SceneAnalyzer():
             for img in self._data:
                 item = img['cls']
                 pos = img['boxxywh']
-                item_prompt = f"ITEM=[{', '.join(item)}]\n\n"
-                pos_prompt = f"POS=[{', '.join([str(box) for box in pos])}]\n\n"
+                item_prompt = f"ITEM=[{', '.join(item)}]\n"
+                pos_prompt = f"POS=[{', '.join([str(box) for box in pos])}]\n"
 
                 for mq in img['question list']:
-                    question_prompt = f"QUESTION: {mq['question']}\n\n"
-                    options_prompt = f"A: {mq['options']['A']}\nB: {mq['options']['B']}\nC: {mq['options']['C']} \nD: {mq['options']['D']}\n\n"
+                    question_prompt = f"QUESTION: {mq['question']}\n"
+                    options_prompt = f"A: {mq['options']['A']}\nB: {mq['options']['B']}\nC: {mq['options']['C']} \nD: {mq['options']['D']}\n"
 
-                    prompt = self._prompt + item_prompt + pos_prompt + question_prompt + options_prompt + "RESPONSE="
+                    prompt = f"{self._prompt}\n{item_prompt}\n{pos_prompt}\n{question_prompt}\n{options_prompt}\nRESPONSE="
                     response = vialm_llm.run_llm(prompt)
-                    print(f"RESPONSE: {response}, ANSWER: {mq['answer']}\n")
+                    print(f"RESPONSE: {response}\n")
+                    print(f"ANSWER: {mq['answer']}\n")
 
                     mq_count += 1
                     if (response == mq['answer']):

@@ -13,7 +13,7 @@ from NLP.ocr_analyzer import OCRAnalyzer
 
 data = json.load(open('NLP/data/ocr_example.json'))
 with open('NLP/utils/ocr_analyzer_prompt.txt', 'r') as f:
-    prompt = "".join(f.readlines()) + '\n\n'
+    prompt = f"{''.join(f.readlines())}\n\n"
 
 analyzer = OCRAnalyzer(data, prompt)
 result = analyzer.analyze()
