@@ -1,7 +1,7 @@
 import torch
 import transformers
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM
 
 
 class VialmLLM():
@@ -9,8 +9,12 @@ class VialmLLM():
         self,
         model: str = "meta-llama/Llama-2-7b-chat-hf"
     ) -> None:
-        self._model = AutoModelForCausalLM.from_pretrained(model)
-        self._tokenizer = AutoTokenizer.from_pretrained(model)
+        if model == "THUDM/chatglm3-6b":
+            self._tokenizer = AutoTokenizer.from_pretrained(model, trust_remote_code=True)
+            self._model = AutoModel.from_pretrained(model, trust_remote_code=True).half().cuda()
+        else:
+            self._tokenizer = AutoTokenizer.from_pretrained(model)
+            self._model = AutoModelForCausalLM.from_pretrained(model)
 
         self._pipeline = transformers.pipeline(
             "text-generation",
@@ -22,10 +26,10 @@ class VialmLLM():
 
     def run_inference(
         self,
-        prompt: str
+        input: str
     ) -> str:
-        response = self._pipeline(
-            prompt,
+        output = self._pipeline(
+            input,
             do_sample=True,
             temperature=0.7,
             top_k=40,
@@ -35,5 +39,5 @@ class VialmLLM():
             max_length=2048,
         )
 
-        return response
+        return output
     
