@@ -12,7 +12,7 @@ from NLP.qrcode_analyzer import QRCodeAnalyzer
 
 
 data = json.load(open('NLP/data/qrcode_example.json'))
-with open('NLP/utils/qrcode_analyzer_prompt.txt', 'r') as f:
+with open('NLP/prompt/qrcode_analyzer_prompt.txt', 'r') as f:
     prompt = f"{''.join(f.readlines())}\n\n"
 
 analyzer = QRCodeAnalyzer(data, prompt)

@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Union
 from NLP.vialm_llm import VialmLLM
 
 
-class SceneAnalyzer():
+class ObjDetAnalyzer():
     def __init__(
         self,
         data: List[Dict[str, Any]],
@@ -14,7 +14,7 @@ class SceneAnalyzer():
 
     def evaluate(
             self, 
-            model: str = "NLP/models/llama-2-chat-7b-hf"
+            model: str = "meta-llama/Llama-2-7b-chat-hf"
         ) -> List[Union[int, float]]:
             
             vialm_llm = VialmLLM(model) 
@@ -33,7 +33,7 @@ class SceneAnalyzer():
                     options_prompt = f"A: {mq['options']['A']}\nB: {mq['options']['B']}\nC: {mq['options']['C']} \nD: {mq['options']['D']}\n"
 
                     prompt = f"{self._prompt}\n{item_prompt}\n{pos_prompt}\n{question_prompt}\n{options_prompt}\nRESPONSE="
-                    response = vialm_llm.run_llm(prompt)
+                    response = vialm_llm.run_inference(prompt)
                     print(f"RESPONSE: {response}\n")
                     print(f"ANSWER: {mq['answer']}\n")
 

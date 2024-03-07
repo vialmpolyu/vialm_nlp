@@ -1,16 +1,16 @@
 import torch
 import transformers
 
-from transformers import LlamaForCausalLM, LlamaTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 class VialmLLM():
     def __init__(
         self,
-        model: str = "NLP/models/llama-2-chat-7b-hf"
+        model: str = "meta-llama/Llama-2-7b-chat-hf"
     ) -> None:
-        self._model = LlamaForCausalLM.from_pretrained(model)
-        self._tokenizer = LlamaTokenizer.from_pretrained(model)
+        self._model = AutoModelForCausalLM.from_pretrained(model)
+        self._tokenizer = AutoTokenizer.from_pretrained(model)
 
         self._pipeline = transformers.pipeline(
             "text-generation",
@@ -20,7 +20,7 @@ class VialmLLM():
             device_map="auto",
         )
 
-    def run_llm(
+    def run_inference(
         self,
         prompt: str
     ) -> str:

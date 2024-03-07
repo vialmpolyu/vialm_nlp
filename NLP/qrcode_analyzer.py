@@ -14,7 +14,7 @@ class QRCodeAnalyzer():
 
     def analyze(
             self, 
-            model: str = "NLP/models/llama-2-chat-7b-hf"
+            model: str = "meta-llama/Llama-2-7b-chat-hf"
     ) -> List[str]:
         
         vialm_llm = VialmLLM(model) 
@@ -25,7 +25,7 @@ class QRCodeAnalyzer():
             url = website['url']
             url_prompt = f"URL={url}\n"
             prompt = f"{self._prompt}\n{url_prompt}\nRESPONSE="
-            response = vialm_llm.run_llm(prompt)
+            response = vialm_llm.run_inference(prompt)
             print(f"RESPONSE: {response}\n")
             print(f"ANSWER: {website['description']}\n")
             result.append(response)
