@@ -6,8 +6,7 @@ from NLP.vialm_llm import VialmLLM
 class QRCodeAnalyzer():
     def __init__(
         self,
-        data: List[Dict[str, Any]],
-        base_prompt: str,
+        data: List[Dict[str, Any]]
     ) -> None:
         self._data = data
         with open('NLP/prompt/qrcode_analyzer_prompt.txt', 'r') as f:
