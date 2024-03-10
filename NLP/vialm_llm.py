@@ -1,8 +1,19 @@
+from typing import Any, Dict, List
+from enum import Enum
+
 import torch
 import transformers
-
 from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM
 
+
+class TaskMode(Enum):
+    OBJ_DET = "obj_det"
+    OCR = "ocr"
+    QRCODE = "qrcode"
+
+    def __str__(self):
+        return self.value
+    
 
 class VialmLLM():
     def __init__(
@@ -23,6 +34,20 @@ class VialmLLM():
             torch_dtype=torch.float16,
             device_map="auto",
         )
+
+    def create_prompt(
+            self,
+            data: List[Dict[str, Any]],
+            base_prompt: str
+    ) -> str:
+        text = [item['text'] for item in data]
+        position = [item['position'] for item in data]
+
+        text_prompt = f"TEXT: [{', '.join(text)}]\n"
+        position_prompt = f"POSITION: [{', '.join([str(coord) for coord in position])}]\n"
+
+        prompt = f"{base_prompt}\n{text_prompt}\n{ position_prompt}\nANSWER: "
+        return prompt
 
     def run_inference(
         self,

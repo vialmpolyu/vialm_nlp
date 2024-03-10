@@ -7,27 +7,18 @@ class OCRAnalyzer():
     def __init__(
         self,
         data: List[Dict[str, Any]],
-        prompt: str,
+        base_prompt: str,
     ) -> None:
         self._data = data
-        self._prompt = prompt
+        with open('NLP/prompt/ocr_analyzer_prompt.txt', 'r') as f:
+            self._base_prompt = f"{''.join(f.readlines())}\n\n"
 
-    def analyze(
+    def run_analysis(
             self,
             model: str = "meta-llama/Llama-2-7b-chat-hf"
     ) -> List[str]:
-        
         vialm_llm = VialmLLM(model) 
+        prompt = vialm_llm.create_prompt(self._data, self._base_prompt)
+        response = vialm_llm.run_inference(prompt)
 
-        result = []
-
-        for receipt in self._data:
-            content = receipt['content']
-            content_prompt = f"CONTENT={content}\n"
-            prompt = f"{self._prompt}\n{content_prompt}\nRESPONSE="
-            response = vialm_llm.run_inference(prompt)
-            print(f"RESPONSE: {response}\n")
-            print(f"ANSWER: {receipt['answer']}\n")
-            result.append(response)
-
-        return result
+        return response

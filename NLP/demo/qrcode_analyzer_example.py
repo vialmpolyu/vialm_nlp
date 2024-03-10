@@ -1,3 +1,4 @@
+import json
 import os
 import sys
 
@@ -6,14 +7,10 @@ parent = os.path.dirname(SCRIPT_DIR)
 parent = os.path.dirname(parent)
 sys.path.append(parent)
 
-import json
-
 from NLP.qrcode_analyzer import QRCodeAnalyzer
 
 
-data = json.load(open('NLP/data/qrcode_example.json'))
-with open('NLP/prompt/qrcode_analyzer_prompt.txt', 'r') as f:
-    prompt = f"{''.join(f.readlines())}\n\n"
+data = json.load(open('NLP/data/qrcode.json'))
 
-analyzer = QRCodeAnalyzer(data, prompt)
-result = analyzer.analyze()
+analyzer = QRCodeAnalyzer(data)
+result = analyzer.run_analysis()
