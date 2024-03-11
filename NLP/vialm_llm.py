@@ -22,8 +22,8 @@ class VialmLLM():
     ) -> None:
         self._model = model
         if "chatglm3-6b" in self._model:
-            self._tokenizer = AutoTokenizer.from_pretrained(model, trust_remote_code=True)
-            self._llm = AutoModel.from_pretrained(model, trust_remote_code=True).half().cuda()
+            self._tokenizer = AutoTokenizer.from_pretrained(model, trust_remote_code=True, max_new_tokens=1024)
+            self._llm = AutoModel.from_pretrained(model, trust_remote_code=True, max_new_tokens=1024).half().cuda()
         else:
             self._tokenizer = AutoTokenizer.from_pretrained(model)
             self._llm = AutoModelForCausalLM.from_pretrained(model)
@@ -62,7 +62,7 @@ class VialmLLM():
                 top_p=0.1,
                 num_return_sequences=1,
                 eos_token_id=self._tokenizer.eos_token_id,
-                max_length=2048,
+                max_new_tokens=1024,
             )
             return outputs[0]['generated_text']
         
