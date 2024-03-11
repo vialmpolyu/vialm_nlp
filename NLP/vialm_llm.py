@@ -62,12 +62,12 @@ class VialmLLM():
                 top_p=0.1,
                 num_return_sequences=1,
                 eos_token_id=self._tokenizer.eos_token_id,
-                max_new_tokens=1024,
+                max_new_tokens=400,
             )
             return outputs[0]['generated_text']
         
         else:
             input_ids = self._tokenizer(inputs, return_tensors="pt").to('cuda')
-            outputs = self._llm.generate(**input_ids)
+            outputs = self._llm.generate(**input_ids, max_new_tokens=400)
             return self._tokenizer.decode(outputs[0])
     
