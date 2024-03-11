@@ -53,33 +53,21 @@ class VialmLLM():
         self,
         inputs: str
     ) -> str:
-        # if "Llama-2-7b-chat" in self._model:
-        #     outputs = self._pipeline(
-        #         inputs,
-        #         do_sample=True,
-        #         temperature=0.7,
-        #         top_k=40,
-        #         top_p=0.1,
-        #         num_return_sequences=1,
-        #         eos_token_id=self._tokenizer.eos_token_id,
-        #         max_new_tokens=1024,
-        #     )
-        #     return outputs[0]['generated_text']
+        if "Llama-2-7b-chat" in self._model:
+            outputs = self._pipeline(
+                inputs,
+                do_sample=True,
+                temperature=0.7,
+                top_k=40,
+                top_p=0.1,
+                num_return_sequences=1,
+                eos_token_id=self._tokenizer.eos_token_id,
+                max_new_tokens=1024,
+            )
+            return outputs[0]['generated_text']
         
-        # else:
-        #     input_ids = self._tokenizer(inputs, return_tensors="pt").to('cuda')
-        #     outputs = self._llm.generate(**input_ids)
-        #     return self._tokenizer.decode(outputs[0])
-
-        outputs = self._pipeline(
-            inputs,
-            do_sample=True,
-            temperature=0.7,
-            top_k=40,
-            top_p=0.1,
-            num_return_sequences=1,
-            eos_token_id=self._tokenizer.eos_token_id,
-            max_new_tokens=1024,
-        )
-        return outputs[0]['generated_text']
+        else:
+            input_ids = self._tokenizer(inputs, return_tensors="pt").to('cuda')
+            outputs = self._llm.generate(**input_ids)
+            return self._tokenizer.decode(outputs[0])
     
