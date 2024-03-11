@@ -67,7 +67,7 @@ class VialmLLM():
             return outputs[0]['generated_text']
         
         else:
-            input_ids = self._tokenizer(inputs, return_tensors="pt").to('cuda')
+            input_ids = self._tokenizer(inputs, return_tensors="pt")
             outputs = self._llm.generate(**input_ids, max_new_tokens=400)
             return self._tokenizer.decode(outputs[0])
     
