@@ -22,15 +22,15 @@ def main(args):
     data = json.load(open(data_path))
 
     if task_mode == TaskMode.OBJ_DET:
-        analyzer = ObjDetAnalyzer(data)
+        analyzer = ObjDetAnalyzer(model_path)
     elif task_mode == TaskMode.OCR:
-        analyzer = OCRAnalyzer(data)
+        analyzer = OCRAnalyzer(model_path)
     elif task_mode == TaskMode.QRCODE:
-        analyzer = QRCodeAnalyzer(data)
+        analyzer = QRCodeAnalyzer(model_path)
     else:
         raise ValueError("Invalid TaskMode")
     
-    result = analyzer.run_analysis(model_path)
+    result = analyzer.run_analysis(data)
     print(result)
 
 """ sample run:
