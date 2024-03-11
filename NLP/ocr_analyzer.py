@@ -6,18 +6,17 @@ from NLP.vialm_llm import VialmLLM
 class OCRAnalyzer():
     def __init__(
         self,
-        data: List[Dict[str, Any]]
+        model: str = "meta-llama/Llama-2-7b-chat-hf" 
     ) -> None:
-        self._data = data
+        self._llm = VialmLLM(model) 
         with open('NLP/prompt/ocr_analyzer_prompt.txt', 'r') as f:
             self._base_prompt = f"{''.join(f.readlines())}\n\n"
 
     def run_analysis(
-            self,
-            model: str = "meta-llama/Llama-2-7b-chat-hf"
+            self, 
+            data: List[Dict[str, Any]]
     ) -> List[str]:
-        vialm_llm = VialmLLM(model) 
-        prompt = vialm_llm.create_prompt(self._data, self._base_prompt)
-        response = vialm_llm.run_inference(prompt)
+        prompt = self._llm.create_prompt(data, self._base_prompt)
+        response = self._llm.run_inference(prompt)
 
         return response

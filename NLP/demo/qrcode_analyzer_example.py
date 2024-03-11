@@ -12,5 +12,5 @@ from NLP.qrcode_analyzer import QRCodeAnalyzer
 
 data = json.load(open('NLP/data/qrcode.json'))
 
-analyzer = QRCodeAnalyzer(data)
-result = analyzer.run_analysis()
+analyzer = QRCodeAnalyzer()
+result = analyzer.run_analysis(data)

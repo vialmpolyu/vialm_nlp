@@ -12,5 +12,5 @@ from NLP.ocr_analyzer import OCRAnalyzer
 
 data = json.load(open('NLP/data/ocr.json'))
 
-analyzer = OCRAnalyzer(data)
-result = analyzer.run_analysis()
+analyzer = OCRAnalyzer()
+result = analyzer.run_analysis(data)

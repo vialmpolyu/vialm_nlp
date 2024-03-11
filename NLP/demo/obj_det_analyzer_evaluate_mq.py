@@ -12,5 +12,5 @@ from NLP.obj_det_analyzer import ObjDetAnalyzer
 
 data = json.load(open('NLP/data/obj_det.json'))
 
-analyzer = ObjDetAnalyzer(data)
-result = analyzer.run_analysis()
+analyzer = ObjDetAnalyzer()
+result = analyzer.run_analysis(data)
