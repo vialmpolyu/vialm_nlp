@@ -20,16 +20,17 @@ class VialmLLM():
         self,
         model: str = "meta-llama/Llama-2-7b-chat-hf"
     ) -> None:
-        if model == "THUDM/chatglm3-6b":
+        self._model = model
+        if "chatglm3-6b" in self._model:
             self._tokenizer = AutoTokenizer.from_pretrained(model, trust_remote_code=True)
-            self._model = AutoModel.from_pretrained(model, trust_remote_code=True).half().cuda()
+            self._llm = AutoModel.from_pretrained(model, trust_remote_code=True).half().cuda()
         else:
             self._tokenizer = AutoTokenizer.from_pretrained(model)
-            self._model = AutoModelForCausalLM.from_pretrained(model)
+            self._llm = AutoModelForCausalLM.from_pretrained(model)
 
         self._pipeline = transformers.pipeline(
             "text-generation",
-            model=self._model,
+            model=self._llm,
             tokenizer=self._tokenizer,
             torch_dtype=torch.float16,
             device_map="auto",
@@ -42,7 +43,6 @@ class VialmLLM():
     ) -> str:
         text = [item['text'] for item in data]
         position = [item['position'] for item in data]
-
         text_prompt = f"TEXT: [{', '.join(text)}]\n"
         position_prompt = f"POSITION: [{', '.join([str(coord) for coord in position])}]\n"
 
@@ -51,18 +51,23 @@ class VialmLLM():
 
     def run_inference(
         self,
-        input: str
+        inputs: str
     ) -> str:
-        output = self._pipeline(
-            input,
-            do_sample=True,
-            temperature=0.7,
-            top_k=40,
-            top_p=0.1,
-            num_return_sequences=1,
-            eos_token_id=self._tokenizer.eos_token_id,
-            max_length=2048,
-        )
-
-        return output
+        if "Llama-2-7b-chat" in self._model:
+            outputs = self._pipeline(
+                inputs,
+                do_sample=True,
+                temperature=0.7,
+                top_k=40,
+                top_p=0.1,
+                num_return_sequences=1,
+                eos_token_id=self._tokenizer.eos_token_id,
+                max_length=2048,
+            )
+            return outputs[0]['generated_text']
+        
+        else:
+            input_ids = self._tokenizer(inputs, return_tensors="pt").to('cuda')
+            outputs = self._llm.generate(**input_ids)
+            return self._tokenizer.decode(outputs[0])
     

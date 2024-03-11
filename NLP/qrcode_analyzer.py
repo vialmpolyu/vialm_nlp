@@ -8,7 +8,7 @@ class QRCodeAnalyzer():
         self,
         model: str = "meta-llama/Llama-2-7b-chat-hf" 
     ) -> None:
-        self._llm = VialmLLM(model) 
+        self._vialm_llm = VialmLLM(model) 
         with open('NLP/prompt/qrcode_analyzer_prompt.txt', 'r') as f:
             self._base_prompt = f"{''.join(f.readlines())}\n\n"
 
@@ -16,7 +16,7 @@ class QRCodeAnalyzer():
             self, 
             data: List[Dict[str, Any]]
     ) -> List[str]:
-        prompt = self._llm.create_prompt(data, self._base_prompt)
-        response = self._llm.run_inference(prompt)
+        prompt = self._vialm_llm.create_prompt(data, self._base_prompt)
+        response = self._vialm_llm.run_inference(prompt)
 
         return response
