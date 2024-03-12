@@ -66,6 +66,11 @@ class VialmLLM():
             )
             return outputs[0]['generated_text']
         
+        elif "chatglm3-6b" in self._model:
+            self._llm = self._llm.eval()
+            response, history = self._llm.chat(self._tokenizer, inputs, [])
+            return response
+        
         else:
             input_ids = self._tokenizer(inputs, return_tensors="pt")
             outputs = self._llm.generate(**input_ids, max_new_tokens=200)
