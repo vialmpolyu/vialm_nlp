@@ -2,8 +2,8 @@
 ~~~
 .
 ├── infer_api_client    %采用API方式进行推理在本地笔记本上的脚本
-│   ├── req_desc.py
-│   └── req_ocr.py
+│   ├── req.py
+│   └── utils.py
 ├── infer_api_server   %采用API方式进行推理在10.21.4.51服务器上的脚本
 │   ├── infer_llama_desc_api.py
 │   └── infer_mistrial_ocr_api.py
