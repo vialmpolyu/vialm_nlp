@@ -39,6 +39,5 @@ python infer_mistrial_ocr_api.py
 1. 连接进researchvpn.polyu.edu.hk
 2. 连接摄像头
 3. 运行脚本
-python req_desc.py
-python req_ocr.py
+python req.py
 ~~~
