@@ -1,17 +1,47 @@
 [
     {
-        "text": "What should I do next?"
+        "text": "What should I do next?",
+        "position": [
+            709,
+            445,
+            246,
+            459
+        ]
     }, 
     {
-        "text": "Where is the qr-code?"
+        "text": "Where is the qr-code?",
+        "position": [
+            709,
+            445,
+            246,
+            459
+        ]
     }, 
     {
-        "text": "What is the object in front of me?"
+        "text": "What is the object in front of me?",
+        "position": [
+            709,
+            445,
+            246,
+            459
+        ]
     }, 
     {
-        "text": "How much did I spent on shoppings today?"
+        "text": "How much did I spent on shoppings today?",
+        "position": [
+            709,
+            445,
+            246,
+            459
+        ]
     }, 
     {
-        "text": "Can you help me with this?"
+        "text": "Can you help me with this?",
+        "position": [
+            709,
+            445,
+            246,
+            459
+        ]
     }
 ]
