@@ -7,7 +7,7 @@ parent = os.path.dirname(SCRIPT_DIR)
 parent = os.path.dirname(parent)
 sys.path.append(parent)
 
-from API_NLP import NLP_AI_AGENT
+from NLP_REVISION.API_NLP import NLP_AI_AGENT
 
 agent = NLP_AI_AGENT()
 agent.init_module_nlp(CFG={})
