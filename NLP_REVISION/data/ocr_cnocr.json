@@ -1,0 +1,431 @@
+[
+    {
+        "TEXT": "JUYIN HOUSE",
+        "SCORE": 0.9434922933578491,
+        "POSITION": [
+            769,
+            17,
+            199,
+            35
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "Table54#Party 2",
+        "SCORE": 0.9250577688217163,
+        "POSITION": [
+            614,
+            93,
+            242,
+            41
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "0193",
+        "SCORE": 0.9881676435470581,
+        "POSITION": [
+            433,
+            95,
+            105,
+            33
+        ],
+        "DISTANCE": 0
+    },
+    {
+        "TEXT": "ap",
+        "SCORE": 0.5321474671363831,
+        "POSITION": [
+            598,
+            120,
+            445,
+            45
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "DINING",
+        "SCORE": 0.8052026629447937,
+        "POSITION": [
+            513,
+            152,
+            266,
+            34
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "T",
+        "SCORE": 0.41806524991989136,
+        "POSITION": [
+            408,
+            179,
+            59,
+            35
+        ],
+        "DISTANCE": 31
+    },
+    {
+        "TEXT": "MAIN",
+        "SCORE": 0.9936851263046265,
+        "POSITION": [
+            503,
+            180,
+            108,
+            34
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "DINING",
+        "SCORE": 0.9906386733055115,
+        "POSITION": [
+            623,
+            180,
+            178,
+            32
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "11.50",
+        "SCORE": 0.9805546998977661,
+        "POSITION": [
+            823,
+            235,
+            71,
+            36
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "BEEFEATER-MARTINI",
+        "SCORE": 0.983849823474884,
+        "POSITION": [
+            508,
+            237,
+            210,
+            32
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "13.00",
+        "SCORE": 0.9922088384628296,
+        "POSITION": [
+            824,
+            263,
+            70,
+            35
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "ROSEMARY CAIPIRINHA",
+        "SCORE": 0.9610422849655151,
+        "POSITION": [
+            520,
+            266,
+            236,
+            33
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "17.00",
+        "SCORE": 0.9757822751998901,
+        "POSITION": [
+            825,
+            293,
+            69,
+            35
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "CRABCAKES",
+        "SCORE": 0.9837181568145752,
+        "POSITION": [
+            462,
+            295,
+            117,
+            32
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "12.00",
+        "SCORE": 0.9898532032966614,
+        "POSITION": [
+            826,
+            322,
+            69,
+            34
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "BLACK PEPPER BACON",
+        "SCORE": 0.942846953868866,
+        "POSITION": [
+            514,
+            323,
+            227,
+            34
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "52.00",
+        "SCORE": 0.9935185313224792,
+        "POSITION": [
+            826,
+            350,
+            70,
+            35
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "MilTenium",
+        "SCORE": 0.8337540626525879,
+        "POSITION": [
+            478,
+            352,
+            161,
+            36
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "46.00",
+        "SCORE": 0.9787687063217163,
+        "POSITION": [
+            828,
+            379,
+            70,
+            34
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "NY",
+        "SCORE": 0.995372474193573,
+        "POSITION": [
+            428,
+            379,
+            54,
+            33
+        ],
+        "DISTANCE": 30
+    },
+    {
+        "TEXT": "SIRLOIN",
+        "SCORE": 0.8712316751480103,
+        "POSITION": [
+            483,
+            379,
+            97,
+            33
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "13.00",
+        "SCORE": 0.9916021227836609,
+        "POSITION": [
+            830,
+            408,
+            68,
+            35
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "BRUSSELSPROUTS",
+        "SCORE": 0.9753578901290894,
+        "POSITION": [
+            496,
+            409,
+            190,
+            33
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "4.50",
+        "SCORE": 0.9837197661399841,
+        "POSITION": [
+            836,
+            438,
+            62,
+            34
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "ESPRESSO",
+        "SCORE": 0.9673362970352173,
+        "POSITION": [
+            453,
+            437,
+            108,
+            33
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "TORTE",
+        "SCORE": 0.9899185299873352,
+        "POSITION": [
+            651,
+            467,
+            72,
+            34
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "9.00",
+        "SCORE": 0.9947366118431091,
+        "POSITION": [
+            836,
+            467,
+            62,
+            35
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "HAZELNUT",
+        "SCORE": 0.9924643039703369,
+        "POSITION": [
+            560,
+            467,
+            111,
+            33
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "1LAUREN'S",
+        "SCORE": 0.8725161552429199,
+        "POSITION": [
+            452,
+            468,
+            152,
+            32
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "Total:",
+        "SCORE": 0.9654703140258789,
+        "POSITION": [
+            725,
+            525,
+            90,
+            37
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "Sub",
+        "SCORE": 0.925990641117096,
+        "POSITION": [
+            665,
+            525,
+            50,
+            33
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "178.00",
+        "SCORE": 0.9870392680168152,
+        "POSITION": [
+            826,
+            527,
+            86,
+            38
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "T",
+        "SCORE": 0.3354383111000061,
+        "POSITION": [
+            628,
+            554,
+            50,
+            36
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "15.35",
+        "SCORE": 0.9792985916137695,
+        "POSITION": [
+            833,
+            556,
+            73,
+            37
+        ],
+        "DISTANCE": 27
+    },
+    {
+        "TEXT": "Sub Total",
+        "SCORE": 0.9298638105392456,
+        "POSITION": [
+            705,
+            585,
+            133,
+            38
+        ],
+        "DISTANCE": 28
+    },
+    {
+        "TEXT": "193.35",
+        "SCORE": 0.98310786485672,
+        "POSITION": [
+            827,
+            586,
+            85,
+            37
+        ],
+        "DISTANCE": 27
+    },
+    {
+        "TEXT": "03/22",
+        "SCORE": 0.9989699125289917,
+        "POSITION": [
+            407,
+            615,
+            76,
+            38
+        ],
+        "DISTANCE": 0
+    },
+    {
+        "TEXT": "953pTOTAL",
+        "SCORE": 0.9482149481773376,
+        "POSITION": [
+            562,
+            613,
+            208,
+            33
+        ],
+        "DISTANCE": 29
+    },
+    {
+        "TEXT": "193.35",
+        "SCORE": 0.9528142809867859,
+        "POSITION": [
+            791,
+            616,
+            155,
+            41
+        ],
+        "DISTANCE": 28
+    }
+]

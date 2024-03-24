@@ -1,0 +1,33 @@
+{
+    "OBJ_REPORT": [
+        "What is in the scene?",
+        "What objects are there?",
+        "Tell me about the surronding environment."
+    ],
+    "OBJ_QA": [
+        "Where is [OBJECT] (e.g. apple, chair, etc)?",
+        "How many items are in the scene?",
+        "Is [OBJECT] in the scene?"
+    ],
+    "OCR_REPORT": [
+        "Help me read this receipt?",
+        "Can you help me with the information on this list?"
+    ],
+    "OCR_QA": [
+        "What is the total price?",
+        "How many items are on the list?",
+        "Give me the name of the dishes."
+    ],
+    "QRCODE_REPORT": [
+        "Help me scan the qrcode.",
+        "Help me locate the qrcode.",
+        "Find the links for me.",
+        "Guide me to the links"
+    ],
+    "QRCODE_QA": [
+        "What is the qrcode about?",
+        "Where is the qrcode?",
+        "What are the links for?",
+        "How many qrcodes are there?"
+    ]
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "TEXT": "weixin://wxpay/bizpayurl?pr=L4BJGKjzz",
+        "SCORE": 1.0,
+        "POSITION": [
+            739,
+            354,
+            325,
+            320
+        ],
+        "DISTANCE": 26
+    },
+    {
+        "TEXT": "https://qr.alipay.com/upx02473eodamk0tqpx9251b",
+        "SCORE": 1.0,
+        "POSITION": [
+            381,
+            248,
+            286,
+            280
+        ],
+        "DISTANCE": 26
+    }
+]
